@@ -1,0 +1,52 @@
+<div class="container">
+    <h2 class="title">Modules</h2>
+
+    <form #moduleForm="ngForm" (ngSubmit)="onSubmit(moduleForm)" class="form">
+        <input type="hidden" name="id" [(ngModel)]="module.id">
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="module.nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" [(ngModel)]="module.descripcion" required>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State:</label>
+            <input type="checkbox" id="state" name="state" [(ngModel)]="module.state">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    <table *ngIf="modules.length > 0" class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>State</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let module of modules">
+                <td data-label="Nombre">{{ module.nombre }}</td>
+                <td data-label="Descripcion">{{ module.descripcion }}</td>
+                <td data-label="State">{{ module.state ? 'Active' : 'Inactive' }}</td>
+                <td data-label="Actions">
+                    <button class="btn-icon edit" (click)="editModule(module)" title="Edit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-icon delete" (click)="deleteModule(module.id)" title="Delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p *ngIf="modules.length === 0">No modules found.</p>
+</div>

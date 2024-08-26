@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  
+  <!-- Importar Bootstrap y Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="home.component.css"> <!-- Enlace a tu archivo CSS personalizado -->
+</head>
+<body>
+  <div class="home-container">
+    <header class="home-header">
+      <h1>Bienvenido</h1>
+      <p>Tu panel de control para gestionar auditorías de forma eficiente.</p>
+    </header>
+    
+    <!-- Sección de Tarjetas -->
+    <section class="cards-section row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-chart-line display-4 text-success mb-3"></i>
+            <h2 class="card-title">Auditorías completadas</h2>
+            <p class="card-text">75% del total</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-file-alt display-4 text-success mb-3"></i>
+            <h2 class="card-title">Reportes pendientes</h2>
+            <p class="card-text">5 reportes por revisar</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card border-0 shadow-sm text-center">
+          <div class="card-body">
+            <i class="fas fa-users display-4 text-success mb-3"></i>
+            <h2 class="card-title">Usuarios activos</h2>
+            <p class="card-text">15 usuarios en línea</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acciones rápidas -->
+    <section class="quick-actions text-center">
+      <h3>Acciones rápidas</h3>
+      <div class="actions-grid d-flex justify-content-center mt-4">
+        <button class="btn btn-success btn-lg me-3">
+          <i class="fas fa-plus"></i> Nuevo reporte
+        </button>
+        <button class="btn btn-outline-success btn-lg me-3">
+          <i class="fas fa-cog"></i> Configuraciones
+        </button>
+        <button class="btn btn-outline-success btn-lg">
+          <i class="fas fa-clipboard-check"></i> Ver auditorías
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

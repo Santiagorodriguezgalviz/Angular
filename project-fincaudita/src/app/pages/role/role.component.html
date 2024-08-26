@@ -1,0 +1,73 @@
+<div class="container">
+  <h2 class="title">Role</h2>
+
+  <form #roleForm="ngForm" (ngSubmit)="onSubmit(roleForm)" class="form">
+    <input type="hidden" name="id" [(ngModel)]="role.id" />
+
+    <div class="form-group">
+      <label for="Nombre">Name:</label>
+      <input
+        type="text"
+        id="Nombre"
+        name="Nombre"
+        [(ngModel)]="role.nombre"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Descripcion">Description:</label>
+      <input
+        type="text"
+        id="Descripcion"
+        name="Descripcion"
+        [(ngModel)]="role.descripcion"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="State">State:</label>
+      <input
+        type="checkbox"
+        id="State"
+        name="State"
+        [(ngModel)]="role.state"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+
+  <table *ngIf="roles.length > 0" class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>State</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roles">
+        <td data-label="Nombre">{{ role.nombre }}</td>
+        <td data-label="Descripcion">{{ role.descripcion }}</td>
+        <td data-label="State">{{ role.state ? 'Active' : 'Inactive' }}</td>
+        <td data-label="Actions">
+          <button class="btn-icon edit" (click)="editRole(role)" title="Edit">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button
+            class="btn-icon delete"
+            (click)="deleteRole(role.id)"
+            title="Delete"
+          >
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="roles.length === 0">No roles found.</p>
+</div>
